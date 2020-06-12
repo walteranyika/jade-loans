@@ -113,7 +113,7 @@
             $('.items').hide();
             if(!isNaN(this.value)){
                 $.ajax({
-                    url: 'http://localhost:8000/api/product/'+ this.value, //this is your uri
+                    url: 'http://66.228.55.80:7777/api/product/'+ this.value, //this is your uri
                     type: 'GET', //this is your method
                     success: function(response){
                         console.log(response)
@@ -133,7 +133,7 @@
             var loan_id = $('.product_select').val();
 
             $.ajax({
-                url: 'http://localhost:8000/api/dates',
+                url: 'http://66.228.55.80:7777/api/dates',
                 type: 'POST',
                 data: {date: start_date, loan_id: loan_id},
                 success: function (result) {
