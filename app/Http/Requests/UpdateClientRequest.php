@@ -36,6 +36,7 @@ class UpdateClientRequest extends FormRequest
                 'required',
             ],
             'kra_pin'      => [
+                'required',
                 'max:10',
             ],
 

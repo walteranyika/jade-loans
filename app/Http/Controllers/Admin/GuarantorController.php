@@ -40,11 +40,12 @@ class GuarantorController extends Controller
         if ($request->input('id_number', false)) {
             $guarantor->addMedia(storage_path('tmp/uploads/' . $request->input('id_number')))->toMediaCollection('id_number');
         }
-
+        if ($request->input('id_back', false)) {
+            $guarantor->addMedia(storage_path('tmp/uploads/' . $request->input('id_back')))->toMediaCollection('id_back');
+        }
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $guarantor->id]);
         }
-
         return redirect()->route('admin.guarantors.index');
     }
 

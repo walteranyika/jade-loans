@@ -12,10 +12,10 @@ class CreateGuarantorsTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->integer('idd_number');
-            $table->integer('id_back');
-            $table->string('added_by');
-            $table->longText('address');
+            $table->string('idd_number');
+            $table->string('id_back');
+            $table->string('added_by')->nullable();
+            $table->string('address')->nullable();
             $table->string('phone_number');
             $table->timestamps();
             $table->softDeletes();

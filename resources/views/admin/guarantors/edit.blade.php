@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="idd_number">{{ trans('cruds.guarantor.fields.idd_number') }}</label>
-                <input class="form-control {{ $errors->has('idd_number') ? 'is-invalid' : '' }}" type="number" name="idd_number" id="idd_number" value="{{ old('idd_number', $guarantor->idd_number) }}" step="1" required>
+                <input class="form-control {{ $errors->has('idd_number') ? 'is-invalid' : '' }}" type="text" name="idd_number" id="idd_number" value="{{ old('idd_number', $guarantor->idd_number) }}" step="1" required>
                 @if($errors->has('idd_number'))
                     <div class="invalid-feedback">
                         {{ $errors->first('idd_number') }}
@@ -40,6 +40,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.guarantor.fields.idd_number_helper') }}</span>
             </div>
+
             <div class="form-group">
                 <label class="required" for="phone_number">{{ trans('cruds.guarantor.fields.phone_number') }}</label>
                 <input class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="text" name="phone_number" id="phone_number" value="{{ old('phone_number', $guarantor->phone_number) }}" required>
@@ -50,6 +51,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.guarantor.fields.phone_number_helper') }}</span>
             </div>
+
             <div class="form-group">
                 <label class="required" for="id_number">{{ trans('cruds.guarantor.fields.id_number') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('id_number') ? 'is-invalid' : '' }}" id="id_number-dropzone">
@@ -61,19 +63,22 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.guarantor.fields.id_number_helper') }}</span>
             </div>
+
             <div class="form-group">
-                <label class="required" for="id_back">{{ trans('cruds.guarantor.fields.id_back') }}</label>
-                <input class="form-control {{ $errors->has('id_back') ? 'is-invalid' : '' }}" type="number" name="id_back" id="id_back" value="{{ old('id_back', $guarantor->id_back) }}" step="1" required>
-                @if($errors->has('id_back'))
+                <label class="required" for="id_front">{{ trans('cruds.client.fields.id_front') }}</label>
+                <div class="needsclick dropzone {{ $errors->has('id_front') ? 'is-invalid' : '' }}" id="id_front-dropzone">
+                </div>
+                @if($errors->has('id_front'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('id_back') }}
+                        {{ $errors->first('id_front') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.guarantor.fields.id_back_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.client.fields.id_front_helper') }}</span>
             </div>
+
             <div class="form-group">
                 <label class="required" for="address">{{ trans('cruds.guarantor.fields.address') }}</label>
-                <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address" id="address" value="{{ old('address', $guarantor->address) }}" required>
+                <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address" id="address" value="{{ old('address', $guarantor->address) }}">
                 @if($errors->has('address'))
                     <div class="invalid-feedback">
                         {{ $errors->first('address') }}
@@ -81,6 +86,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.guarantor.fields.address_helper') }}</span>
             </div>
+
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

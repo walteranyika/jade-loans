@@ -34,11 +34,11 @@ class CreditController extends Controller
     {
         abort_if(Gate::denies('credit_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $clients = Client::all()->pluck('first_name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $clients = Client::all();
 
         $products = Product::all();
 
-        $guarantors = Guarantor::all()->pluck('first_name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $guarantors = Guarantor::all();
 
         $users = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -50,12 +50,15 @@ class CreditController extends Controller
     public function store(StoreCreditRequest $request)
     {
         $amount = Product::find($request->product_id)->amount;
-        $data = ['amount' => $amount, 'balance' => $amount, 'user_id' => auth()->user()->id, 'status' => 0, 'total_repayment' => 0];
+        $location_id= Location::all()->first()->id;
+        $data = ['amount' => $amount, 'balance' => $amount, 'user_id' => auth()->user()->id, 'status' => 0, 'total_repayment' => 0,'location_id'=>$location_id];
         $credit = Credit::create(array_merge($request->all(), $data));
         $daily_amount = round($credit->product->amount / $credit->product->duration);
         $start = Carbon::now()->addDays(1);
         $end = Carbon::now()->addDays($credit->product->duration);
         $dates = CarbonPeriod::create($start, $end);
+        $credit->last_date=$end;
+        $credit->save();
         $datey = [];
         foreach ($dates as $date) {
             $datey[] = $date->format('Y-m-d');

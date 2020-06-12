@@ -15,6 +15,7 @@ class Credit extends Model
 
     protected $dates = [
         'date_issued',
+        'last_date',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -28,6 +29,7 @@ class Credit extends Model
         'status',
         'user_id',
         'date_issued',
+        'last_date',
         'total_repayment',
         'balance',
         'location_id',

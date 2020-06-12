@@ -28,7 +28,7 @@
                             {{ trans('cruds.credit.fields.client') }}
                         </th>
                         <td>
-                            {{ $credit->client->first_name ?? '' }}
+                            {{ $credit->client->first_name ?? '' }} {{ $credit->client->last_name ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -52,7 +52,7 @@
                             {{ trans('cruds.credit.fields.guarantor') }}
                         </th>
                         <td>
-                            {{ $credit->guarantor->first_name ?? '' }}
+                            {{ $credit->guarantor->first_name ?? '' }}  {{ $credit->guarantor->last_name ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -77,6 +77,15 @@
                         </th>
                         <td>
                             {{ $credit->date_issued }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Last Date
+                        </th>
+                        <td>
+                            {{ $credit->last_date->format('d/m/Y') }}
                         </td>
                     </tr>
                     <tr>

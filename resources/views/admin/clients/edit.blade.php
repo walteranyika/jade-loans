@@ -98,7 +98,7 @@
             </div>
             <div class="form-group">
                 <label for="postal_address">{{ trans('cruds.client.fields.postal_address') }}</label>
-                <textarea class="form-control {{ $errors->has('postal_address') ? 'is-invalid' : '' }}" name="postal_address" id="postal_address">{{ old('postal_address', $client->postal_address) }}</textarea>
+                <input class="form-control {{ $errors->has('postal_address') ? 'is-invalid' : '' }}" name="postal_address" id="postal_address" value="{{ old('postal_address', $client->postal_address) }}">
                 @if($errors->has('postal_address'))
                     <div class="invalid-feedback">
                         {{ $errors->first('postal_address') }}

@@ -35,10 +35,6 @@ class StoreCreditRequest extends FormRequest
                 'required',
                 'date_format:' . config('panel.date_format'),
             ],
-            'location_id'     => [
-                'required',
-                'integer',
-            ],
         ];
     }
 }

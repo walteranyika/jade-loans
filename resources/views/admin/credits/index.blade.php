@@ -48,6 +48,11 @@
                         <th>
                             {{ trans('cruds.credit.fields.date_issued') }}
                         </th>
+
+                        <th>
+                            Last Date
+                        </th>
+
                         <th>
                             {{ trans('cruds.credit.fields.total_repayment') }}
                         </th>
@@ -100,6 +105,9 @@
 
                             <td>
                                 {{ $credit->date_issued ?? '' }}
+                            </td>
+                            <td>
+                                {{ $credit->last_date->format('d/m/Y') }}
                             </td>
                             <td>
                                 {{ $credit->total_repayment ?? '' }}

@@ -39,6 +39,7 @@ class StoreClientRequest extends FormRequest
                 'required',
             ],
             'kra_pin'        => [
+                'required',
                 'max:10',
             ],
             'id_front'       => [

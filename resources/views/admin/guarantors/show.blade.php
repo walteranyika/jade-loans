@@ -67,14 +67,18 @@
                             @endif
                         </td>
                     </tr>
-                    <tr>
+                   {{-- <tr>
                         <th>
                             {{ trans('cruds.guarantor.fields.id_back') }}
                         </th>
                         <td>
-                            {{ $guarantor->id_back }}
+                            @if($guarantor->id_back)
+                                <a href="{{ $guarantor->id_back->getUrl() }}" target="_blank">
+                                    <img src="{{ $guarantor->id_back->getUrl('thumb') }}" width="50px" height="50px">
+                                </a>
+                            @endif
                         </td>
-                    </tr>
+                    </tr>--}}
                     <tr>
                         <th>
                             {{ trans('cruds.guarantor.fields.address') }}
@@ -88,7 +92,7 @@
                             {{ trans('cruds.guarantor.fields.added_by') }}
                         </th>
                         <td>
-                            {{ App\Guarantor::ADDED_BY_RADIO[$guarantor->added_by] ?? '' }}
+                            {{ $guarantor->added_by }}
                         </td>
                     </tr>
                 </tbody>

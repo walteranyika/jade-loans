@@ -13,6 +13,7 @@ class CreateCreditsTable extends Migration
             $table->integer('amount');
             $table->integer('status');
             $table->date('date_issued');
+            $table->date('last_date');
             $table->integer('total_repayment');
             $table->integer('balance');
             $table->string('mpesa_code')->nullable();

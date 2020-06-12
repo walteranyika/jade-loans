@@ -33,3 +33,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Locations
     Route::apiResource('locations', 'LocationApiController');
 });
+
+
+Route::get("product/{product}","Api\V1\DataController@index");
+Route::post("dates","Api\V1\DataController@getEndDate");
