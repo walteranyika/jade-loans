@@ -148,36 +148,8 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.client.fields.id_back_helper') }}</span>
             </div>
-            <div class="form-group">
-                <label class="required">{{ trans('cruds.client.fields.application') }}</label>
-                @foreach(App\Client::APPLICATION_RADIO as $key => $label)
-                    <div class="form-check {{ $errors->has('application') ? 'is-invalid' : '' }}">
-                        <input class="form-check-input" type="radio" id="application_{{ $key }}" name="application" value="{{ $key }}" {{ old('application', $client->application) === (string) $key ? 'checked' : '' }} required>
-                        <label class="form-check-label" for="application_{{ $key }}">{{ $label }}</label>
-                    </div>
-                @endforeach
-                @if($errors->has('application'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('application') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.client.fields.application_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required">{{ trans('cruds.client.fields.added_by') }}</label>
-                @foreach(App\Client::ADDED_BY_RADIO as $key => $label)
-                    <div class="form-check {{ $errors->has('added_by') ? 'is-invalid' : '' }}">
-                        <input class="form-check-input" type="radio" id="added_by_{{ $key }}" name="added_by" value="{{ $key }}" {{ old('added_by', $client->added_by) === (string) $key ? 'checked' : '' }} required>
-                        <label class="form-check-label" for="added_by_{{ $key }}">{{ $label }}</label>
-                    </div>
-                @endforeach
-                @if($errors->has('added_by'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('added_by') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.client.fields.added_by_helper') }}</span>
-            </div>
+
+
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

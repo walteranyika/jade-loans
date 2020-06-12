@@ -189,7 +189,7 @@ return [
             'id_front_helper'       => '',
             'id_back'               => 'ID Back',
             'id_back_helper'        => '',
-            'application'           => 'Application',
+            'application'           => 'Loan Applications',
             'application_helper'    => '',
             'added_by'              => 'Added By',
             'added_by_helper'       => '',

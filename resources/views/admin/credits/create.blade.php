@@ -39,16 +39,6 @@
                 <span class="help-block">{{ trans('cruds.credit.fields.product_helper') }}</span>
             </div>
 
-           {{-- <div class="form-group">
-                <label class="required" for="amount">{{ trans('cruds.credit.fields.amount') }}</label>
-                <input class="form-control {{ $errors->has('amount') ? 'is-invalid' : '' }}" type="number" name="amount" id="amount" value="{{ old('amount', '') }}" step="1" required>
-                @if($errors->has('amount'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('amount') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.credit.fields.amount_helper') }}</span>
-            </div>--}}
 
             <div class="form-group">
                 <label class="required" for="guarantor_id">{{ trans('cruds.credit.fields.guarantor') }}</label>

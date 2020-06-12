@@ -35,7 +35,8 @@ class ClientController extends Controller
 
     public function store(StoreClientRequest $request)
     {
-        $client = Client::create($request->all());
+        $data=array_merge($request->all(),["application"=>1,"added_by"=>auth()->user()->name]);
+        $client = Client::create($data);
 
         if ($request->input('passport_photo', false)) {
             $client->addMedia(storage_path('tmp/uploads/' . $request->input('passport_photo')))->toMediaCollection('passport_photo');
@@ -65,6 +66,8 @@ class ClientController extends Controller
 
     public function update(UpdateClientRequest $request, Client $client)
     {
+        $data=array_merge($request->all(),["application"=>1,"added_by"=>auth()->user()->name]);
+
         $client->update($request->all());
 
         if ($request->input('passport_photo', false)) {

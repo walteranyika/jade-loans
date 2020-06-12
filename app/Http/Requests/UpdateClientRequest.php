@@ -28,8 +28,6 @@ class UpdateClientRequest extends FormRequest
             'id_number'    => [
                 'required',
                 'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
             'phone_number' => [
                 'required',
@@ -37,18 +35,10 @@ class UpdateClientRequest extends FormRequest
             'gender'       => [
                 'required',
             ],
-            'zone'         => [
-                'required',
-            ],
             'kra_pin'      => [
                 'max:10',
             ],
-            'application'  => [
-                'required',
-            ],
-            'added_by'     => [
-                'required',
-            ],
+
         ];
     }
 }

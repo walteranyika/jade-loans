@@ -31,16 +31,11 @@ class StoreClientRequest extends FormRequest
             'id_number'      => [
                 'required',
                 'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
             'phone_number'   => [
                 'required',
             ],
             'gender'         => [
-                'required',
-            ],
-            'zone'           => [
                 'required',
             ],
             'kra_pin'        => [
@@ -51,13 +46,7 @@ class StoreClientRequest extends FormRequest
             ],
             'id_back'        => [
                 'required',
-            ],
-            'application'    => [
-                'required',
-            ],
-            'added_by'       => [
-                'required',
-            ],
+            ]
         ];
     }
 }

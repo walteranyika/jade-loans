@@ -144,7 +144,7 @@
                             {{ trans('cruds.client.fields.application') }}
                         </th>
                         <td>
-                            {{ App\Client::APPLICATION_RADIO[$client->application] ?? '' }}
+                            {{ $client->clientCredits->count() }}
                         </td>
                     </tr>
                     <tr>
@@ -152,7 +152,7 @@
                             {{ trans('cruds.client.fields.added_by') }}
                         </th>
                         <td>
-                            {{ App\Client::ADDED_BY_RADIO[$client->added_by] ?? '' }}
+                            {{$client->added_by }}
                         </td>
                     </tr>
                 </tbody>
